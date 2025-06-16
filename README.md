@@ -62,7 +62,7 @@ types/
 
 1. Clonar el repositorio
 ```bash
-git clone 
+git clone https://github.com/J-CamiloG/TaskManagmentFront.git
 ```
 2. Navegar a la carpeta del proyecto
 ```bash
