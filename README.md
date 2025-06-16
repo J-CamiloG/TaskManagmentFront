@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📌 Task Management Front – Prueba Técnica
 
-## Getting Started
+Este proyecto Esta desplagado en URL es la interfaz gráfica de usuario para un sistema de gestión de tareas. Fue desarrollado como parte de una prueba técnica para la posición de Desarrollador Semi Senior.
 
-First, run the development server:
+##  Objetivo
+
+Desarrollar una SPA (Single Page Application) moderna con React y Next.js que consuma una API RESTful para la gestión de tareas, incluyendo autenticación, estados y control total del flujo CRUD.
+
+---
+
+##  Tecnologías utilizadas
+
+- **Next.js 15 (App Router)**
+- **React 19**
+- **TypeScript**
+- **Redux Toolkit** – Manejo de estado global
+- **Tailwind CSS** – Estilos responsivos
+- **Zod + React Hook Form** – Validación de formularios
+- **Axios** – Cliente HTTP
+- **Lucide-react** – Íconos
+- **React-hot-toast** – Notificaciones
+- **Date-fns** – Manejo de fechas
+
+---
+
+##  Arquitectura utilizada
+
+Se utilizó una arquitectura **Modular basada en dominio funcional**, estructurada sobre el sistema de rutas del **App Router** de Next.js.
+
+###  Características clave:
+
+- **Módulos separados por dominio** (`tasks`, `states`, `auth`, `dashboard`)
+- **Layouts jerárquicos** definidos por ruta
+- **Capa de UI desacoplada** con componentes reutilizables (`components/ui`)
+- **Estado global** con Redux Toolkit (`store/slices`)
+- **Tipos centralizados** en `/types`
+- **Helpers y lógica de red** separados en `/lib`
+
+>  Esta arquitectura permite escalar la aplicación fácilmente, seguir buenas prácticas como separación de responsabilidades y mantener un código limpio, mantenible y testeable.
+
+---
+
+## Estructura de carpetas principal
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+app/
+├─ (auth)/login/
+├─ (auth)/register/
+├─ (dashboard)/dashboard/
+├─ states/
+├─ tasks/
+components/
+├─ layout/
+├─ ui/
+lib/
+store/
+├─ slices/
+types/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación y ejecución local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clonar el repositorio
+```bash
+git clone 
+```
+2. Navegar a la carpeta del proyecto
+```bash
+cd task-management-front
+```
+3. Crear archivo en .env
+```bash
+mkadir .env
+```
+4. Copiar las variables de entornos enviadas tal como puenstra en .env.example
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Intalar dependecias 
+```bash
+npm install
+```
+6. Correr en local
+```bash
+npm run dev
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Funcionalidades implementadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Login y registro con validación
+- Gestión completa de tareas (crear, editar, eliminar)
+- Gestión de estados (CRUD completo)
+- Listado de tareas con filtros
+- Skeleton loaders y toasts de feedback
+- Manejo de errores de la API
+- Autenticación con JWT (persistencia de token)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+##  Decisiones técnicas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js App Router**: mejor control del layout, segmentación de rutas, manejo de loaders y soporte para SSR.
+- **Redux Toolkit**: gestión de estado centralizada, simple y escalable.
+- **React Hook Form + Zod**: validación declarativa con tipado estricto y manejo eficiente de formularios.
+- **Tailwind CSS**: desarrollo rápido y flexible de UI moderna y responsiva.
+- **Arquitectura modular por dominio**: facilita la escalabilidad y la colaboración en equipos grandes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Buenas prácticas aplicadas
+
+- Tipado estricto con TypeScript
+- Separación clara entre presentación, dominio y datos
+- Componentes reutilizables
+- Código modular y desacoplado
+- Manejo global de errores y notificaciones
+- Accesibilidad y diseño responsive
+
+---
+
+## Backend del proyecto
+**Repositorio del backend**: privado 
+
+---

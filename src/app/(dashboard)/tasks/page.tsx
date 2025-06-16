@@ -27,7 +27,7 @@ export default function TasksPage() {
   const [selectedDate, setSelectedDate] = useState(filters.dueDate || "")
   const [showFilters, setShowFilters] = useState(false)
 
-  // Cargar tareas 
+  // Cargar tareas
   useEffect(() => {
     dispatch(
       fetchTasks({
@@ -93,7 +93,7 @@ export default function TasksPage() {
           <h1 className="text-2xl font-bold text-gray-900">Gestión de Tareas</h1>
           <p className="text-gray-600">{totalCount > 0 ? `${totalCount} tareas encontradas` : "No hay tareas"}</p>
         </div>
-        <Button onClick={() => router.push("/tasks/create")}>
+        <Button onClick={() => router.push("/tasks/create")} className="bg-gray-800 cursor-pointer">
           <Plus className="mr-2 h-4 w-4" />
           Nueva Tarea
         </Button>
@@ -103,8 +103,8 @@ export default function TasksPage() {
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg">Filtros</CardTitle>
-            <Button variant="outline" size="sm" onClick={() => setShowFilters(!showFilters)}>
+            <CardTitle className="text-lg text-black">Filtros</CardTitle>
+            <Button variant="outline" size="sm" onClick={() => setShowFilters(!showFilters)} >
               <Filter className="mr-2 h-4 w-4" />
               {showFilters ? "Ocultar" : "Mostrar"} Filtros
             </Button>
@@ -114,9 +114,8 @@ export default function TasksPage() {
         {showFilters && (
           <CardContent className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Search by title */}
               <div className="space-y-2">
-                <Label htmlFor="search">Buscar por título</Label>
+                <Label htmlFor="search" className="text-black">Buscar por título</Label>
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                   <Input
@@ -129,9 +128,8 @@ export default function TasksPage() {
                 </div>
               </div>
 
-              {/* Filter by state */}
               <div className="space-y-2">
-                <Label htmlFor="state">Filtrar por estado</Label>
+                <Label htmlFor="state" className="text-black">Filtrar por estado</Label>
                 <select
                   id="state"
                   value={selectedState}
@@ -147,9 +145,8 @@ export default function TasksPage() {
                 </select>
               </div>
 
-              {/* Filter by due date */}
               <div className="space-y-2">
-                <Label htmlFor="dueDate">Filtrar por fecha límite</Label>
+                <Label htmlFor="dueDate" className="text-black">Filtrar por fecha límite</Label>
                 <Input
                   id="dueDate"
                   type="date"
@@ -160,7 +157,7 @@ export default function TasksPage() {
             </div>
 
             <div className="flex space-x-2">
-              <Button onClick={handleApplyFilters}>Aplicar Filtros</Button>
+              <Button onClick={handleApplyFilters} className="bg-green-600 text-white">Aplicar Filtros</Button>
               <Button variant="outline" onClick={handleClearFilters}>
                 Limpiar Filtros
               </Button>
@@ -169,10 +166,9 @@ export default function TasksPage() {
         )}
       </Card>
 
-      {/* tarea */}
+      {/* lista tareas */}
       <div className="space-y-4">
         {isLoading ? (
-          // Loading skeletons
           [...Array(5)].map((_, i) => (
             <Card key={i}>
               <CardContent className="p-6">
@@ -192,7 +188,7 @@ export default function TasksPage() {
             </Card>
           ))
         ) : tasks.length > 0 ? (
-          // Tasks list
+
           tasks.map((task) => (
             <Card key={task.id} className={`task-card ${isOverdue(task.dueDate || "") ? "task-overdue" : ""}`}>
               <CardContent className="p-6">
@@ -247,7 +243,6 @@ export default function TasksPage() {
             </Card>
           ))
         ) : (
-          // Empty state
           <Card>
             <CardContent className="p-12 text-center">
               <div className="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
@@ -268,7 +263,7 @@ export default function TasksPage() {
         )}
       </div>
 
-      {/* paginacion */}
+      {/* Pagination */}
       {totalPages > 1 && (
         <Card>
           <CardContent className="p-4">
