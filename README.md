@@ -1,6 +1,6 @@
-# 📌 Task Management Front – Prueba Técnica
+# Task Management Front – Prueba Técnica
 
-Este proyecto Esta desplagado en URL es la interfaz gráfica de usuario para un sistema de gestión de tareas. Fue desarrollado como parte de una prueba técnica para la posición de Desarrollador Semi Senior.
+Este proyecto está desplegado en [task-managment-front.vercel.app](https://task-managment-front.vercel.app). Es la interfaz gráfica de usuario para un sistema de gestión de tareas. Fue de
 
 ##  Objetivo
 
