@@ -1,4 +1,4 @@
-# Task Management Front – Prueba Técnica
+# Task Management Front
 
 Este proyecto está desplegado en [task-managment-front.vercel.app](https://task-managment-front.vercel.app). Es la interfaz gráfica de usuario para un sistema de gestión de tareas. Fue de
 
